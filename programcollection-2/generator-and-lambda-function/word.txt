@@ -1,0 +1,13 @@
+import random
+import string
+
+def generate_random_word(length):
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(length))
+
+file_path = '/e:/python-code-file/programcollection-2/generator-and-lambda-function/word.txt'
+
+with open(file_path, 'a') as file:
+    for _ in range(10):
+        random_word = generate_random_word(random.randint(5, 15))
+        file.write(random_word + '\n')

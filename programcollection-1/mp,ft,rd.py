@@ -1,12 +1,12 @@
 #MAP
 #map filter apply karna sa phle khuch example dekhel lata ha
 lists= [1,2,6,4,5,3]
-# def cube(x):
-#     return x*x*x
-# newlist = []
-# for list in lists:
-#     newlist.append(cube(list))
-# print(newlist)
+def cube(x):
+    return x*x*x
+newlist = []
+for list in lists:
+    newlist.append(cube(list))
+print(newlist)
 #ya jo uppper kam kara ha kitna haritate ha
 #is liya hum python ka inbuild function ka istamal karta ha
 newl = list(map(lambda x : x*x*x, lists))
