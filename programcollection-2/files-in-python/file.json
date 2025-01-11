@@ -1,0 +1,12 @@
+{
+  "name": "Muhammad Inam",
+  "age": 20,
+  "city": "Karachi",
+  "occupation": "Software Engineer",
+  "hobbies": ["Coding", "Reading", "Gaming"],
+  "is_student": false,
+  "grades": { "Math": 85, "Science": 90, "History": 78 },
+  "address": null,
+  "phone_number": "123-456-7890",
+  "email": "Qp9oR@example.com"
+}
