@@ -1,0 +1,33 @@
+2025-01-14 07:15:05,511 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,512 - INFO - check the integer val 1
+2025-01-14 07:15:05,512 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,513 - INFO - check the integer val 2
+2025-01-14 07:15:05,513 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,513 - INFO - check the integer val 3
+2025-01-14 07:15:05,513 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,514 - INFO - check the integer val 4
+2025-01-14 07:15:05,514 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,514 - INFO - check the integer val 5
+2025-01-14 07:15:05,514 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,515 - INFO - check the integer val 6
+2025-01-14 07:15:05,515 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,515 - INFO - check the integer val 7
+2025-01-14 07:15:05,515 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,516 - INFO - check the integer val 8
+2025-01-14 07:15:05,516 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,516 - INFO - check the integer val 9
+2025-01-14 07:15:05,516 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,516 - INFO - loop through the nested list: [22, 33, 22, 1, 2, 3] and 22
+2025-01-14 07:15:05,516 - INFO - loop through the nested list: [22, 33, 22, 1, 2, 3] and 33
+2025-01-14 07:15:05,517 - INFO - loop through the nested list: [22, 33, 22, 1, 2, 3] and 22
+2025-01-14 07:15:05,517 - INFO - loop through the nested list: [22, 33, 22, 1, 2, 3] and 1
+2025-01-14 07:15:05,517 - INFO - loop through the nested list: [22, 33, 22, 1, 2, 3] and 2
+2025-01-14 07:15:05,517 - INFO - loop through the nested list: [22, 33, 22, 1, 2, 3] and 3
+2025-01-14 07:15:05,517 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,517 - INFO - check the string val inam
+2025-01-14 07:15:05,518 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,518 - INFO - check the string val khan
+2025-01-14 07:15:05,518 - INFO - loop through the list: [1, 2, 3, 4, 5, 6, 7, 8, 9, [22, 33, 22, 1, 2, 3], 'inam', 'khan', 'pakistan']
+2025-01-14 07:15:05,518 - INFO - check the string val pakistan
+2025-01-14 07:15:05,518 - INFO - [1, 2, 3, 4, 5, 6, 7, 8, 9, 22, 33, 22, 1, 2, 3]
+2025-01-14 07:15:05,519 - INFO - ['inam', 'khan', 'pakistan']
