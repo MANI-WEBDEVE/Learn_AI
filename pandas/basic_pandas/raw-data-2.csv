@@ -1,0 +1,31 @@
+,todos,total,skip,limit
+0,"{'id': 1, 'todo': 'Do something nice for someone you care about', 'completed': False, 'userId': 152}",254,0,30
+1,"{'id': 2, 'todo': 'Memorize a poem', 'completed': True, 'userId': 13}",254,0,30
+2,"{'id': 3, 'todo': 'Watch a classic movie', 'completed': True, 'userId': 68}",254,0,30
+3,"{'id': 4, 'todo': 'Watch a documentary', 'completed': False, 'userId': 84}",254,0,30
+4,"{'id': 5, 'todo': 'Invest in cryptocurrency', 'completed': False, 'userId': 163}",254,0,30
+5,"{'id': 6, 'todo': 'Contribute code or a monetary donation to an open-source software project', 'completed': False, 'userId': 69}",254,0,30
+6,"{'id': 7, 'todo': ""Solve a Rubik's cube"", 'completed': True, 'userId': 76}",254,0,30
+7,"{'id': 8, 'todo': 'Bake pastries for yourself and neighbor', 'completed': True, 'userId': 198}",254,0,30
+8,"{'id': 9, 'todo': 'Go see a Broadway production', 'completed': False, 'userId': 7}",254,0,30
+9,"{'id': 10, 'todo': 'Write a thank you letter to an influential person in your life', 'completed': True, 'userId': 9}",254,0,30
+10,"{'id': 11, 'todo': 'Invite some friends over for a game night', 'completed': False, 'userId': 104}",254,0,30
+11,"{'id': 12, 'todo': 'Have a football scrimmage with some friends', 'completed': False, 'userId': 32}",254,0,30
+12,"{'id': 13, 'todo': ""Text a friend you haven't talked to in a long time"", 'completed': True, 'userId': 2}",254,0,30
+13,"{'id': 14, 'todo': 'Organize pantry', 'completed': False, 'userId': 46}",254,0,30
+14,"{'id': 15, 'todo': 'Buy a new house decoration', 'completed': True, 'userId': 105}",254,0,30
+15,"{'id': 16, 'todo': ""Plan a vacation you've always wanted to take"", 'completed': True, 'userId': 162}",254,0,30
+16,"{'id': 17, 'todo': 'Clean out car', 'completed': False, 'userId': 71}",254,0,30
+17,"{'id': 18, 'todo': 'Draw and color a Mandala', 'completed': True, 'userId': 6}",254,0,30
+18,"{'id': 19, 'todo': 'Create a cookbook with favorite recipes', 'completed': True, 'userId': 53}",254,0,30
+19,"{'id': 20, 'todo': 'Bake a pie with some friends', 'completed': False, 'userId': 162}",254,0,30
+20,"{'id': 21, 'todo': 'Create a compost pile', 'completed': False, 'userId': 13}",254,0,30
+21,"{'id': 22, 'todo': 'Take a hike at a local park', 'completed': True, 'userId': 37}",254,0,30
+22,"{'id': 23, 'todo': 'Take a class at local community center that interests you', 'completed': True, 'userId': 65}",254,0,30
+23,"{'id': 24, 'todo': 'Research a topic interested in', 'completed': True, 'userId': 130}",254,0,30
+24,"{'id': 25, 'todo': 'Plan a trip to another country', 'completed': False, 'userId': 140}",254,0,30
+25,"{'id': 26, 'todo': 'Improve touch typing', 'completed': False, 'userId': 178}",254,0,30
+26,"{'id': 27, 'todo': 'Learn Express.js', 'completed': False, 'userId': 194}",254,0,30
+27,"{'id': 28, 'todo': 'Learn calligraphy', 'completed': False, 'userId': 80}",254,0,30
+28,"{'id': 29, 'todo': 'Have a photo session with some friends', 'completed': True, 'userId': 91}",254,0,30
+29,"{'id': 30, 'todo': 'Go to the gym', 'completed': True, 'userId': 142}",254,0,30
