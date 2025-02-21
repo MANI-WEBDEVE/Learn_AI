@@ -1,59 +1,42 @@
 import streamlit as st
-import app  # Import the corrected app.py file
-# import api  # Import API module
-from api.locationapi import Item 
-import api.locationapi as api
-# Configure Streamlit Page
-st.set_page_config(
-    page_title="Location Tracker",
-    page_icon="🌍",
-    layout="wide"
-)
+import requests
+import asyncio
 
-st.title("🌍 Location Tracking System")
-
-# Fetch client IP location
-location_1 = app.get_client_ip()
-
-# Ensure valid data
-if "error" in location_1:
-    st.error(f"Error Fetching IP: {location_1['error']}")
-else:
-    st.success("Location data retrieved successfully!")
-
-    # Convert location data to Pydantic model
-    location_item = Item(**location_1)
+async def load_page():
+    st.set_page_config(
+        page_title="Location Tracker",
+        page_icon="🌍",
+        layout="wide"
+    )
     
-    # Store location in MongoDB
-    response = api.create_loc(location_item)
-    st.write("📍 **Location Saved in Database!**")
+    st.title("Location Tracking System")
 
-    # Display Location Data
+  
+
+    # Fetch user location from FastAPI endpoint
+    response = requests.get("http://127.0.0.1:8000/")
+    if response.status_code == 200:
+        location_1 = response.json()
+    else:
+        st.error("Failed to fetch location data from API")
+        return
+
+    # Layout Columns
     col1, col2 = st.columns(2)
-
+    
     with col1:
-        st.subheader("📌 Location Details")
-        loca = list(location_1['loc'].split(","))
-        latitude, longitude = float(loca[0]), float(loca[1])
+        st.subheader("User's Actual Location")
+        
+        latitude = location_1.get("lat", "Unknown")
+        longitude = location_1.get("lon", "Unknown")
 
-        st.map(data={"lat": [latitude], "lon": [longitude]})
-        st.write(f"**City:** {location_1['city']}")
-        st.write(f"**Region:** {location_1['region']}")
-        st.write(f"**Country:** {location_1['country']}")
-        st.write(f"**IP:** {location_1['ip']}")
-        st.write(f"**Postal Code:** {location_1['postal']}")
-        st.write(f"**Timezone:** {location_1['timezone']}")
+        st.map(data={"lat": [float(latitude)], "lon": [float(longitude)]})
+        st.write(f"Latitude: {latitude}")
+        st.write(f"Longitude: {longitude}")
+        st.write(f"City: {location_1['city']}")
+        st.write(f"Region: {location_1['region']}")
+        st.write(f"Country: {location_1['country']}")
+        st.write(f"IP: {location_1['ip']}")
 
-    with col2:
-        st.subheader("📜 Location History")
-        if "locations" not in st.session_state:
-            st.session_state.locations = []
-
-        if latitude != 0.0 and longitude != 0.0:
-            location = {"latitude": latitude, "longitude": longitude, "timestamp": st.time_input("Timestamp")}
-            if st.button("Save Location"):
-                st.session_state.locations.append(location)
-
-        if st.session_state.locations:
-            for loc in st.session_state.locations:
-                st.write(f"Lat: {loc['latitude']}, Long: {loc['longitude']}, Time: {loc['timestamp']}")
+if __name__ == "__main__":
+    asyncio.run(load_page())
