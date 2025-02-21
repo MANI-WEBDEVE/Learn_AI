@@ -1,29 +1,20 @@
 import requests
 
-def get_user_ip():
+def get_client_ip():
+    """Fetches user's real IP using an external API"""
     try:
-        response = requests.get("https://api64.ipify.org?format=json")
-        ip_data = response.json()
-        return ip_data["ip"]
-    except Exception as e:
-        print("Error fetching IP:", e)
-        return None
+        ip_response = requests.get("https://api64.ipify.org?format=json")
+        ip_response.raise_for_status()
+        user_ip = ip_response.json()["ip"]
 
-def get_location(ip):
-    try:
-        response = requests.get(f"https://ipinfo.io/{ip}/json")
-        return response.json()
-    except Exception as e:
-        print("Error fetching location:", e)
-        return None
+        # Now fetch location data for this IP
+        location_response = requests.get(f"https://ipinfo.io/{user_ip}/json")
+        location_response.raise_for_status()
+        
+        return location_response.json()
 
-user_ip = get_user_ip()
-print(f'user_ip:{user_ip}')
-if user_ip:
-    location_data = get_location(user_ip)
-    print(f'terminal:{location_data}')
-    def user_info():
-        return location_data
+    except requests.exceptions.RequestException as e:
+        return {"error": str(e)}
 
-else:
-    print("Could not get user IP")
+# Get location data
+location = get_client_ip()
