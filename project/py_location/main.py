@@ -10,32 +10,35 @@ async def load_page():
         page_icon="🌍",
         layout="wide"
     )
-    location_1 = app.get_location()
-
+    location_1 = app.user_info()
+    st.write(f'location_1: {location_1}')
     st.title("Location Tracking System")
     
     # Create columns for layout
     col1, col2 = st.columns(2)
     
     # Convert location_1 dictionary to Item object
-    location_item = Item(**location_1)
-    lloop = await api.create_loc(location_item)
-    # st.write(f'loop: {lloop}')
+    if location_1 is not None and all(key in location_1 for key in ["ip", "region", "country", "loc", "postal", "city", "timezone"]):
+        location_item = Item(**location_1)
+        lloop = await api.create_loc(location_item)
+        st.write(f'loop: {lloop}')
 
-    with col1:
-        # Location input fields
-        loca = list(location_1['loc'].split(","))
-        
-        st.subheader("Enter Location Details")
-        latitude = float(loca[0])
-        longitude = float(loca[1])
-        st.map(data={"lat": [latitude], "lon": [longitude]})
-        st.write(f"City: {location_1['city']}")
-        st.write(f"Region: {location_1['region']}")
-        st.write(f"Country: {location_1['country']}")
-        st.write(f"IP: {location_1['ip']}")
-        st.write(f"Postal Code: {location_1['postal']}")
-        st.write(f"Timezone: {location_1['timezone']}")
+        with col1:
+            # Location input fields
+            loca = list(location_1['loc'].split(","))
+            
+            st.subheader("Enter Location Details")
+            latitude = float(loca[0])
+            longitude = float(loca[1])
+            st.map(data={"lat": [latitude], "lon": [longitude]})
+            st.write(f"City: {location_1['city']}")
+            st.write(f"Region: {location_1['region']}")
+            st.write(f"Country: {location_1['country']}")
+            st.write(f"IP: {location_1['ip']}")
+            st.write(f"Postal Code: {location_1['postal']}")
+            st.write(f"Timezone: {location_1['timezone']}")
+    else:
+        st.error("Location information is incomplete or missing.")
         
     with col2:
         # Location history section

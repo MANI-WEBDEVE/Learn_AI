@@ -1,11 +1,11 @@
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException,Request
 from mongoengine import connect, Document, StringField, FloatField, DoesNotExist
 from pydantic import BaseModel
 from typing import Optional
 import os
 from dotenv import load_dotenv
-
+import requests
 # Load environment variables from .env file
 load_dotenv()
 
@@ -60,14 +60,23 @@ def item_helper(item):
         "readme": item.readme
     }
 
-@app.get("/")
-async def root():
-    return {"message": "Welcome to FastAPI with MongoDB"}
-
+# @app.post("/get")
+# async def get_location(request: Request):
+#     client_ip = request.headers.get("X-Forwarded-For", request.client.host if request.client else None)
+    
+#     if client_ip:
+#         ip_info = requests.get(f"https://ipinfo.io/{client_ip}/json").json()
+#         ip_info=ItemDocument(**ip_info)
+#         ip_info.save()
+#         return ip_info,'Success',200
+#     else:
+#         return {"error": "Could not determine user IP"}
+    
 @app.post("/")
 async def create_loc(item: Item):
     try:
         item_doc = ItemDocument(**item.dict())
+        print(f'item_doc:{item_doc}')
         item_doc.save()
         return item_helper(item_doc), "Success", 200
     except Exception as e:

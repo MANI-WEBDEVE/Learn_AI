@@ -1,27 +1,29 @@
-import geocoder
-import folium
 import requests
-# Use 'me' to get the current IP address of the machine running the code
-g = geocoder.ip('39.39.124.59')
-my_address = g.latlng
 
-def get_location():
-    response = requests.get("https://ipinfo.io/json")
-    data = response.json()
-    return data
+def get_user_ip():
+    try:
+        response = requests.get("https://api64.ipify.org?format=json")
+        ip_data = response.json()
+        return ip_data["ip"]
+    except Exception as e:
+        print("Error fetching IP:", e)
+        return None
 
-location = get_location()
-# print(f"IP: {location['ip']}")
-# print(f"City: {location['city']}")
-# print(f"Region: {location['region']}")
-# print(f"Country: {location['country']}")
-print(f"Location (Lat, Long): {location['loc']}")
+def get_location(ip):
+    try:
+        response = requests.get(f"https://ipinfo.io/{ip}/json")
+        return response.json()
+    except Exception as e:
+        print("Error fetching location:", e)
+        return None
 
-if my_address:
-    my_map = folium.Map(location=my_address, zoom_start=12)
-    folium.CircleMarker(location=my_address, radius=50, popup="Your Location").add_to(my_map)
-    folium.Marker(location=my_address, popup="Yorkshire").add_to(my_map)
-    my_map.save("my_map.html")
-    # print(my_address)
+user_ip = get_user_ip()
+print(f'user_ip:{user_ip}')
+if user_ip:
+    location_data = get_location(user_ip)
+    print(f'terminal:{location_data}')
+    def user_info():
+        return location_data
+
 else:
-    print("Failed to get the location.")
+    print("Could not get user IP")
