@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6928b316f54693c2adf18a76751fa542 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6928b316f54693c2adf18a76751fa542" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6928b316f54693c2adf18a76751fa542 = L.map(
+                "map_6928b316f54693c2adf18a76751fa542",
+                {
+                    center: [24.8608, 67.0104],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4fee8f11195f0cfc4d58ad23627a1d35 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4fee8f11195f0cfc4d58ad23627a1d35.addTo(map_6928b316f54693c2adf18a76751fa542);
+        
+    
+            var circle_marker_9020fa5cf556edd89531903b91845fcf = L.circleMarker(
+                [24.8608, 67.0104],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50, "stroke": true, "weight": 3}
+            ).addTo(map_6928b316f54693c2adf18a76751fa542);
+        
+    
+        var popup_d6615500433316c1bcf74200bf7c5849 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_072bddbbd59722123f845ba7a283c84b = $(`<div id="html_072bddbbd59722123f845ba7a283c84b" style="width: 100.0%; height: 100.0%;">Your Location</div>`)[0];
+                popup_d6615500433316c1bcf74200bf7c5849.setContent(html_072bddbbd59722123f845ba7a283c84b);
+            
+        
+
+        circle_marker_9020fa5cf556edd89531903b91845fcf.bindPopup(popup_d6615500433316c1bcf74200bf7c5849)
+        ;
+
+        
+    
+    
+            var marker_bdb890319f31db8f488d24d6c42aeaba = L.marker(
+                [24.8608, 67.0104],
+                {
+}
+            ).addTo(map_6928b316f54693c2adf18a76751fa542);
+        
+    
+        var popup_c0a223afadde61030464ad99db01e2fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_406bf781e7f9dfb684e212716cda3dd6 = $(`<div id="html_406bf781e7f9dfb684e212716cda3dd6" style="width: 100.0%; height: 100.0%;">Yorkshire</div>`)[0];
+                popup_c0a223afadde61030464ad99db01e2fd.setContent(html_406bf781e7f9dfb684e212716cda3dd6);
+            
+        
+
+        marker_bdb890319f31db8f488d24d6c42aeaba.bindPopup(popup_c0a223afadde61030464ad99db01e2fd)
+        ;
+
+        
+    
+</script>
+</html>
