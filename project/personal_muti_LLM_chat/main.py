@@ -7,11 +7,13 @@ from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 import chat_api
 import asyncio
+from dotenv import load_dotenv
+
 
 async def main():
     load_dotenv()
     groq_api_key = os.getenv("GROQ_API_KEY")
-
+    session_key=os.getenv("SESSION_KEY")
     # Model mapping dictionary
     MODEL_MAPPING = {
         "DeepSeek R1": "deepseek-r1-distill-llama-70b",
@@ -35,7 +37,7 @@ async def main():
 
     # Initialize session state with a default value
     if "session_value" not in st.session_state:
-        st.session_state.session_value = "inam"
+        st.session_state.session_value = session_key
 
     if "session_auth" not in st.session_state:  
         st.session_state.session_auth = ""
@@ -84,7 +86,7 @@ async def main():
 
     # Check session state and display chat if session value is entered
     session_value = st.text_input("Enter session value:", st.session_state.session_auth)
-    if session_value != "inam":
+    if session_value != session_key:
         st.warning("Please enter the correct session value to view the chat.")
         return
 
@@ -99,10 +101,14 @@ async def main():
             with st.chat_message("user", avatar="👤"):
                 st.markdown(chat.get("user_message"))
             with st.chat_message("assistant", avatar="🤖"):
-                st.markdown(chat.get("ai_response"))
+                st.markdown(chat.get("ai_response").split("</think>")[-1])
         if len(data) > 20:
             # Only display the 10 most recent chats
             chat = chat[-10:]
+            with st.chat_message("user", avatar="👤"):
+                st.markdown(chat.get("user_message"))
+            with st.chat_message("assistant", avatar="🤖"):
+                st.markdown(chat.get("ai_response").split("</think>")[-1])
 
     # Display chat history with formatted response
     for message in st.session_state.messages:
@@ -115,16 +121,19 @@ async def main():
     # Define prompt template
     prompt_template = ChatPromptTemplate.from_template(
         """
-        You are {model_name}, a powerful AI model. 
+        You are {model_name}, a highly advanced AI model developed to assist users with their queries.
         {model_description}
-        
-        Answer the question to the best of your ability, even if no additional context is provided.
-        Provide the most accurate response based on the question. and and only response Minglish language 
-        
+
+        If someone asks about your creator and purpose, you can say:
+        "I was created by Muhammad Inam to assist you with your work."
+
+        Answer the following question to the best of your ability, even if no additional context is provided.
+        Provide the most accurate and helpful response based on the question, and respond in Minglish (a mix of English and Urdu).
+
         <context>
         {context}
         </context>
-        
+
         Question: {input}
         """
     )
