@@ -1,0 +1,8 @@
+streamlit              # Interactive data app framework  
+langchain              # LangChain framework for building language model applications  
+langchain_core         # Core utilities and abstractions for LangChain  
+langchain_community    # Community-contributed integrations and tools for LangChain  
+langchain_groq         # Groq integration for LangChain  
+python-dotenv          # Load environment variables from .env files  
+fastapi
+motor 
