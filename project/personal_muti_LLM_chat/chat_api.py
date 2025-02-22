@@ -1,9 +1,13 @@
 import fastapi
 from pymongo import MongoClient
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
+get_database_uri=os.getenv("MONGODB_URI")
 app = fastapi.FastAPI()
 # Connect to MongoDB
-client = MongoClient("mongodb+srv://inamkhan:inamchat@chat.xmdb1.mongodb.net/")
+client = MongoClient(get_database_uri)
 db = client["chat_db"]
 collection = db["chats"]
 
