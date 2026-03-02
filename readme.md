@@ -1,1 +1,2 @@
-### Learn AI from scratch.
+### Learn AI/ML from scratch.
+
