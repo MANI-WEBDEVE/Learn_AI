@@ -7,6 +7,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+/deep_learning/CNN/PetImages
+
 # C extensions
 *.so
 
